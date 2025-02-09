@@ -1,0 +1,11 @@
+.userModal {
+  .userContent {
+    .ant-image {
+      border-radius: 50%;
+      overflow: hidden;
+      .ant-image-mask-info {
+        display: none;
+      }
+    }
+  }
+}

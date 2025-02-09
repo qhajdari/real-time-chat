@@ -1,0 +1,33 @@
+.contacts_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contacts_list {
+  .contactChat {
+    display: flex;
+    padding: 20px;
+    cursor: default;
+    border-bottom: 1px solid #f6f6f6;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    .chat_info {
+      display: flex;
+      align-items: center;
+      .contactChat__info {
+        margin-left: 15px;
+
+        h2 {
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}

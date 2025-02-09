@@ -1,0 +1,154 @@
+.chat {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  .chat__header {
+    height: 50px !important;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    pointer-events: none; //hover when child class is hovered (child class gets style from style attrbiute of div)
+    background: #ededed;
+    &:hover {
+      background: lightgrey;
+    }
+
+    .chat__headerLeft {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      pointer-events: auto; //this enables hover for parent class
+
+      .back__button {
+        background: transparent;
+        border: none;
+        box-shadow: unset;
+        margin-right: 10px;
+        pointer-events: auto;
+      }
+
+      .icon-container {
+        pointer-events: auto;
+        .ant-image {
+          border-radius: 50%;
+          overflow: hidden;
+          .ant-image-mask-info {
+            display: none;
+          }
+        }
+      }
+      .chat__headerInfo {
+        align-self: center;
+        flex: 1;
+        padding-left: 20px;
+        h3 {
+          padding-bottom: 5px;
+          font-weight: 500;
+        }
+        p {
+          color: gray;
+        }
+      }
+    }
+
+    .chat__headerRight {
+      display: flex;
+      justify-content: end;
+      gap: 5px;
+      // min-width: 100px;
+      .chat__contact_add {
+        pointer-events: auto;
+      }
+
+      .chat__search {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        pointer-events: auto;
+
+        input {
+          height: 100% !important;
+          border: none;
+          height: 20px;
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  .chat__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    height: 62px;
+    border-top: 1px solid lightgray;
+    position: relative;
+
+    .emoji__container {
+      position: absolute;
+      bottom: 62px;
+    }
+
+    form {
+      flex: 1;
+      display: flex;
+      input {
+        flex: 1;
+        border-radius: 30px;
+        padding: 10px;
+        border: none;
+      }
+    }
+    .MuiSvgIcon-root {
+      padding: 10px;
+      // color: gray;
+    }
+  }
+}
+
+@media (display-mode: standalone) {
+  .chat__footer {
+    padding-bottom: 20px !important;
+  }
+  .chat__footer.inputFocused {
+    padding-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .chat {
+    width: 40%;
+    .chat__header {
+      padding: 5px !important;
+      .chat__headerRight {
+        button {
+          padding: 0;
+        }
+      }
+      .chat__headerInfo {
+        h3 {
+          margin: 0;
+        }
+        p {
+          margin: 0 !important;
+        }
+      }
+    }
+    .draggable__chat__body {
+      padding: 15px !important;
+    }
+    .chat__footer {
+      padding-right: 10px;
+      .MuiButtonBase-root {
+        padding: 0;
+      }
+      .ant-input-affix-wrapper {
+        padding: 5px;
+      }
+    }
+  }
+}

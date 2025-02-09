@@ -1,0 +1,103 @@
+.sidebar__chats {
+  width: 100%;
+  flex: 1;
+  background-color: white;
+  // overflow: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+
+  .ant-badge {
+    width: 100%;
+    .ant-badge-count {
+      cursor: default;
+      right: 30px;
+      top: 50%;
+      font-size: 16px;
+    }
+  }
+  .badgeSidebarClosed {
+    .ant-badge-count {
+      top: 45px;
+      right: 10px;
+      font-size: 10px;
+      padding: 0 3px;
+    }
+  }
+
+  .sidebarChat {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    &:hover {
+      background: #ebebeb;
+    }
+    .sidebarChat__info {
+      width: 100%;
+      margin-left: 15px;
+      border-bottom: 1px solid #f6f6f6;
+      overflow: hidden;
+      h2 {
+        font-size: 16px;
+        margin: 8px 0;
+      }
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+      .chat_lastMsg_deleted {
+        font-size: 12px;
+        color: gray;
+      }
+    }
+  }
+  .sidebarChat.selected {
+    background-color: #f0f0f0 !important;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .sidebar {
+    .sidebar__chats {
+      .ant-badge-count {
+        right: 18px;
+      }
+      //       .MuiPaper-root {
+      //         .MuiTypography-h5 {
+      //           font-size: unset;
+      //         }
+      //         // ul {
+      //         //   .MuiListItem-root {
+      //         //     padding: 0 5px;
+      //         //     .MuiListItemAvatar-root {
+      //         //       .MuiAvatar-root {
+      //         //       }
+      //         //     }
+      //         //     .MuiTypography-root {
+      //         //       font-size: 12px;
+      //         //     }
+      //         //   }
+      //         // }
+      //       }
+    }
+  }
+}
+@media (display-mode: standalone) {
+  .sidebar {
+    .sidebar__chats {
+      .sidebarChat:hover {
+        background: transparent;
+      }
+      .ant-badge-count {
+        right: 18px;
+      }
+    }
+  }
+}

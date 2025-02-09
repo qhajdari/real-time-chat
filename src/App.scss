@@ -1,0 +1,120 @@
+.App {
+  background: gray;
+  height: 100vh;
+  .app__body {
+    display: flex;
+    background-color: #ededed;
+    height: 100%;
+    width: 100%;
+    // padding-bottom: max(20px, env(safe-area-inset-bottom));
+    .ant-input-affix-wrapper {
+      border-color: transparent;
+    }
+
+    //user status online/offline
+    .icon-container {
+      position: relative;
+
+      .status-circle,
+      .groupIcon {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid white;
+        // font-size: 18px;
+      }
+      .status-circle {
+        bottom: 2px;
+        right: -2px;
+        width: 13px;
+        height: 13px;
+      }
+      .groupIcon {
+        top: -10px;
+        right: -5px;
+        background-color: #1890ff;
+        color: #fff;
+        .MuiSvgIcon-root {
+          font-size: 18px;
+          padding: 0px !important;
+        }
+      }
+    }
+
+    .skeletonLoading {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+//modals
+.ant-modal {
+  //add button
+  .chat_button {
+    display: flex;
+    gap: 5px;
+  }
+  // margin: 0 10px;
+  // max-width: 77%;
+  .ant-modal-body {
+    max-height: 500px !important;
+    overflow: auto;
+  }
+}
+
+.ant-tour {
+  width: 300px;
+}
+
+@media screen and (max-width: 460px) {
+  .app__body {
+    font-size: 12px;
+    .MuiSvgIcon-root {
+      padding: 5px !important;
+    }
+
+    .skeletonLoading {
+      width: 100% !important;
+      overflow: hidden;
+    }
+  }
+  .auth__body {
+    .login__container {
+      width: 100%;
+      padding: 50px !important;
+      .ant-steps {
+        height: 180px;
+        align-items: center;
+      }
+    }
+  }
+  .ant-modal {
+    // margin: 0 10px;
+    // max-width: 77%;
+    .antd-modal-content {
+      padding: 10px 20px;
+    }
+  }
+
+  //remove all tooltips in mobile view
+  .ant-tooltip {
+    display: none;
+  }
+
+  //To prevent text selection on hover
+  .disable-text-selection {
+    -webkit-user-select: none; /* Disable text selection on iOS */
+  }
+
+  // //disable all hover effects
+  // * :hover {
+  //   background: inherit;
+  // }
+}

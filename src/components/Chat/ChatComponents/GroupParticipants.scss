@@ -1,0 +1,50 @@
+.participants-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  .participant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .user-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 8px;
+      .ant-image {
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 16px;
+
+        .ant-image-mask-info {
+          display: none;
+        }
+      }
+      .name {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+      }
+      .user-status {
+        font-size: 14px;
+        color: #999;
+        display: flex;
+        align-items: center;
+        .status {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: blink 1s infinite;
+        }
+        @keyframes blink {
+          50% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
