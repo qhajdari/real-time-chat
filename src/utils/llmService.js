@@ -1,8 +1,8 @@
 import axios from "axios";
 
 // Get OpenAI API key from environment variables
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-console.log("API Key:", process.env.OPENAI_API_KEY);
+const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+console.log("API Key:", process.env.REACT_APP_OPENAI_API_KEY);
 
 // Function to call OpenAI API
 export const getChatSummary = async(chats) => {
