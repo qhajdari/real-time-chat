@@ -1,13 +1,11 @@
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 // Get OpenAI API key from environment variables
-const OPENAI_API_KEY = dotenv.parse.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+console.log("API Key:", process.env.OPENAI_API_KEY);
 
 // Function to call OpenAI API
-export const getChatSummary = async(chats)=> {
+export const getChatSummary = async(chats) => {
   try {
     // Convert messages to a formatted string
     const chatText = chats
