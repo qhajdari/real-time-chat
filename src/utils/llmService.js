@@ -8,6 +8,7 @@ console.log("API Key:", process.env.REACT_APP_OPENAI_API_KEY);
 export const getChatSummary = async(chats) => {
   try {
     // Convert messages to a formatted string
+    // Comment
     const chatText = chats
       .map((chat) => `${chat.author}: ${chat.message}`)
       .join("\n");
